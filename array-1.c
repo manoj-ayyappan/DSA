@@ -1,3 +1,5 @@
+// Basics of an array
+
 #include<stdio.h>
 int main() {
     // declare an array
@@ -15,6 +17,11 @@ int main() {
     for(int i=0; i<5; i++) {
         printf("%d\n", C[i]);
     }
+
+    // can be used in C++
+    // for(int x:B) {
+
+    // }
 
     return 0;
 }
