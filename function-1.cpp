@@ -17,7 +17,6 @@ int main() {
     z = add(x, y);          // actual parameters
 
     printf("Addition = %d\n", z);
-
     return 0;
 }
 
