@@ -1,4 +1,5 @@
 // 2D arrays in C
+// stored as a single line in the memory
 
 #include<stdio.h>
 #include<stdlib.h>
