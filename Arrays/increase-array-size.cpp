@@ -29,5 +29,4 @@ int main() {
     q = NULL;
 
     return 0;
-    
 }
