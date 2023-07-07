@@ -11,6 +11,14 @@ struct Array
     int length;
 };
 
+void Display(struct Array arr) {
+    int i;
+    printf("\nElements are\n");
+    for(i=0; i<arr.length; i++) {
+        printf("%d ", arr.A[i]);
+    }
+}
+
 int main() {
     struct Array arr;
     int n, i;
@@ -19,7 +27,15 @@ int main() {
     arr.A = (int *)malloc(arr.size*sizeof(int));
     arr.length = 0;
 
-    
+    printf("Enter the number of numbers\n");
+    scanf("%d", &n);
+
+    printf("Enter all the elements\n");
+    for(i=0; i<n; i++)
+        scanf("%d", &arr.A[i]);
+    arr.length = n;
+
+    Display(arr);
 
     return 0;
 }
