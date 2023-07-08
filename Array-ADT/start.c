@@ -28,6 +28,17 @@ void Append(struct Array *arr, int element) {       // call by address coz the a
         arr->A[arr->length++] = element;
 }
 
+// Insert function
+void Insert(struct Array *arr, int index, int element) {
+    if(index>=0 && index <= arr->length) {
+        for(int i=arr->length; i>index; i--) {
+            arr->A[i] = arr->A[i-1];
+        }
+        arr->A[index] = element;
+        arr->length++;
+    }
+}
+
 int main() {
 
     struct Array arr = {{2,3,4,5,6}, 10, 5};
@@ -49,7 +60,9 @@ int main() {
     //     scanf("%d", &arr.A[i]);
     // arr.length = n;
 
-    Append(&arr, 10);
+    
+    // Append(&arr, 10);
+    Insert(&arr, 5, 11);
     Display(arr);
 
     return 0;
