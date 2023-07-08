@@ -14,11 +14,18 @@ struct Array
     int length;
 };
 
+// Display function
 void Display(struct Array arr) {
     int i;
     printf("\nElements are\n");
     for(i=0; i<arr.length; i++)
         printf("%d ", arr.A[i]);
+}
+
+// Append function
+void Append(struct Array *arr, int element) {       // call by address coz the array is going to be modified
+    if(arr->length < arr->size)
+        arr->A[arr->length++] = element;
 }
 
 int main() {
@@ -42,6 +49,7 @@ int main() {
     //     scanf("%d", &arr.A[i]);
     // arr.length = n;
 
+    Append(&arr, 10);
     Display(arr);
 
     return 0;
