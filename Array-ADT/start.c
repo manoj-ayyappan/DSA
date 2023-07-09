@@ -55,14 +55,27 @@ int Delete(struct Array *arr, int index) {
     return 0;
 }
 
+void swap(int *x, int *y) {
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
 // linear search
-int LinearSearch(struct Array arr, int key) {
+int LinearSearch(struct Array *arr, int key) {
     int i;
-    for (i = 0; i < arr.length; i++)
+    for (i = 0; i < arr->length; i++)
     {
-        if(arr.A[i] == key)
+        if(arr->A[i] == key)
         {
             // successful
+
+            // transposition
+            // swap(&arr->A[i], &arr->A[i-1]);
+
+            // Move to head
+            swap(&arr->A[i], &arr->A[0]);
             return i;
         }    
     }
@@ -95,7 +108,7 @@ int main() {
     // Append(&arr, 10);
     // Insert(&arr, 5, 11);
     // printf("%d\n", Delete(&arr, 2));
-    printf("%d\n", LinearSearch(arr, 4));
+    printf("%d\n", LinearSearch(&arr, 4));
     Display(arr);
 
     return 0;
