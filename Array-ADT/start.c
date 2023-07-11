@@ -101,7 +101,20 @@ int BinarySearch(struct Array arr, int key) {
     return -1;
 }
 
-// 
+// Recursive Binary search
+int RBinSearch(int a[], int l, int h, int key) {
+    int mid;
+    if(l<=h) {
+        mid = (l+h)/2;
+        if(a[mid] == key)
+            return mid;
+        else if(key < a[mid])
+            return RBinSearch(a, l, mid-1, key);
+        else
+            return RBinSearch(a, mid+1, h, key);
+    }
+    return -1;
+}
 
 int main() {
 
@@ -129,7 +142,8 @@ int main() {
     // Insert(&arr, 5, 11);
     // printf("%d\n", Delete(&arr, 2));
     // printf("%d\n", LinearSearch(&arr, 4));
-    printf("%d\n", BinarySearch(arr, 5));
+    // printf("%d\n", BinarySearch(arr, 5));
+    printf("%d\n", RBinSearch(arr.A,0, arr.length-1, 5));
     Display(arr);
 
     return 0;
