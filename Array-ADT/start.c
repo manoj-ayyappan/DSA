@@ -137,7 +137,7 @@ int main() {
     //     scanf("%d", &arr.A[i]);
     // arr.length = n;
 
-    
+
     // Append(&arr, 10);
     // Insert(&arr, 5, 11);
     // printf("%d\n", Delete(&arr, 2));
