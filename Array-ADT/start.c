@@ -151,6 +151,21 @@ int min(struct Array arr) {
     return min;
 }
 
+// sum function
+int sum(struct Array arr) {
+    int s = 0;
+    for (int i = 0; i < arr.length; i++)
+    {
+        s += arr.A[i];
+    }
+    return s;
+}
+
+// average function
+float avg(struct Array arr) {
+    return (float)sum(arr)/arr.length;
+}
+
 int main() {
 
     struct Array arr = {{2,3,4,5,6}, 10, 5};
@@ -178,7 +193,8 @@ int main() {
     // printf("%d\n", Delete(&arr, 2));
     // printf("%d\n", LinearSearch(&arr, 4));
     // printf("%d\n", BinarySearch(arr, 5));
-    printf("%d\n", RBinSearch(arr.A,0, arr.length-1, 5));
+    // printf("%d\n", RBinSearch(arr.A,0, arr.length-1, 5));
+    // printf("%d\n", get(arr, 90));
     Display(arr);
 
     return 0;
