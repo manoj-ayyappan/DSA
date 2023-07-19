@@ -129,6 +129,28 @@ void set(struct Array *arr, int index, int value) {
         arr->A[index] = value;
 }
 
+// find max element
+int max(struct Array arr) {
+    int max = arr.A[0];
+    for (int i = 1; i < arr.length; i++)
+    {
+        if(arr.A[i]>max)
+            max = arr.A[i];
+    }
+    return max;
+}
+
+// find min element
+int min(struct Array arr) {
+    int min = arr.A[0];
+    for (int i = 1; i < arr.length; i++)
+    {
+        if(arr.A[i]<min)
+            min = arr.A[i];
+    }
+    return min;
+}
+
 int main() {
 
     struct Array arr = {{2,3,4,5,6}, 10, 5};
