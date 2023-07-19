@@ -116,6 +116,19 @@ int RBinSearch(int a[], int l, int h, int key) {
     return -1;
 }
 
+// get value from index
+int get(struct Array arr, int index) {
+    if(index>=0 && index < arr.length)
+        return arr.A[index];
+    return -1;
+}
+
+// set value in array
+void set(struct Array *arr, int index, int value) {
+    if(index>=0 && index < arr->length)
+        arr->A[index] = value;
+}
+
 int main() {
 
     struct Array arr = {{2,3,4,5,6}, 10, 5};
