@@ -166,6 +166,20 @@ float avg(struct Array arr) {
     return (float)sum(arr)/arr.length;
 }
 
+// reverse function
+void Reverse(struct Array *arr) {
+    int *B;
+    int i, j;
+
+    B = (int *)malloc(arr->length * sizeof(int));
+    for(i=arr->length-1, j=0; i>=0; i--, j++) {
+        B[j] = arr->A[i];
+    }
+    for(i=0; i<arr->length; i++) {
+        arr->A[i] = B[i];
+    }
+}
+
 int main() {
 
     struct Array arr = {{2,3,4,5,6}, 10, 5};
@@ -195,6 +209,7 @@ int main() {
     // printf("%d\n", BinarySearch(arr, 5));
     // printf("%d\n", RBinSearch(arr.A,0, arr.length-1, 5));
     // printf("%d\n", get(arr, 90));
+    Reverse(&arr);
     Display(arr);
 
     return 0;
