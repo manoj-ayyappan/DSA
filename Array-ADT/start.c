@@ -188,6 +188,15 @@ void Reverse2(struct Array *arr) {
     }
 }
 
+void leftrotate(struct Array *arr) {
+    int i, temp;
+    temp = arr->A[0];
+    for(i=1; i<arr->length; i++) {
+        arr->A[i-1] = arr->A[i];
+    }
+    arr->A[arr->length-1] = temp;
+}
+
 int main() {
 
     struct Array arr = {{2,3,4,5,6}, 10, 5};
@@ -217,7 +226,8 @@ int main() {
     // printf("%d\n", BinarySearch(arr, 5));
     // printf("%d\n", RBinSearch(arr.A,0, arr.length-1, 5));
     // printf("%d\n", get(arr, 90));
-    Reverse2(&arr);
+    // Reverse2(&arr);
+    leftrotate(&arr);
     Display(arr);
 
     return 0;
