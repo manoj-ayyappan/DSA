@@ -188,6 +188,7 @@ void Reverse2(struct Array *arr) {
     }
 }
 
+// left rotate
 void leftrotate(struct Array *arr) {
     int i, temp;
     temp = arr->A[0];
@@ -195,6 +196,16 @@ void leftrotate(struct Array *arr) {
         arr->A[i-1] = arr->A[i];
     }
     arr->A[arr->length-1] = temp;
+}
+
+// right rotate
+void rightrotate(struct Array *arr) {
+    int i, temp;
+    temp = arr->A[arr->length-1];
+    for(i=arr->length-1; i>0; i--) {
+        arr->A[i] = arr->A[i-1];
+    }
+    arr->A[0] = temp;
 }
 
 int main() {
@@ -227,7 +238,8 @@ int main() {
     // printf("%d\n", RBinSearch(arr.A,0, arr.length-1, 5));
     // printf("%d\n", get(arr, 90));
     // Reverse2(&arr);
-    leftrotate(&arr);
+    // leftrotate(&arr);
+    rightrotate(&arr);
     Display(arr);
 
     return 0;
