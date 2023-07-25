@@ -208,6 +208,19 @@ void rightrotate(struct Array *arr) {
     arr->A[0] = temp;
 }
 
+// insert into sorted list
+void insertSort(struct Array *arr, int x) {
+    int i = arr->length-1;
+    if(arr->length == arr->size)
+        return;
+    while(i>=0 && arr->A[i]>x) {
+        arr->A[i+1] = arr->A[i];
+        i--;
+    }
+    arr->A[i+1] = x;
+    arr->length++;
+}
+
 int main() {
 
     struct Array arr = {{2,3,4,5,6}, 10, 5};
@@ -239,7 +252,8 @@ int main() {
     // printf("%d\n", get(arr, 90));
     // Reverse2(&arr);
     // leftrotate(&arr);
-    rightrotate(&arr);
+    // rightrotate(&arr);
+    insertSort(&arr, 8);
     Display(arr);
 
     return 0;
