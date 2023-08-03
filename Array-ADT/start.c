@@ -221,6 +221,18 @@ void insertSort(struct Array *arr, int x) {
     arr->length++;
 }
 
+// check if array is sorted
+int isSorted(struct Array arr) {
+    for (int i = 0; i < arr.length-1; i++)
+    {
+        if (arr.A[i]>arr.A[i+1])
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+
 int main() {
 
     struct Array arr = {{2,3,4,5,6}, 10, 5};
@@ -253,7 +265,8 @@ int main() {
     // Reverse2(&arr);
     // leftrotate(&arr);
     // rightrotate(&arr);
-    insertSort(&arr, 8);
+    // insertSort(&arr, 8);
+    printf("%d ", isSorted(arr));
     Display(arr);
 
     return 0;
