@@ -233,9 +233,20 @@ int isSorted(struct Array arr) {
     return 1;
 }
 
+// arrange negative and positive numbers
+void Rearrange(struct Array *arr) {
+    int i = 0;
+    int j = arr->length-1;
+    while(i<j) {
+        while(arr->A[i] < 0) {i++;}
+        while(arr->A[j] >= 0) {j--;}
+        if(i<j) {swap(&arr->A[i], &arr->A[j]);}
+    }
+}
+
 int main() {
 
-    struct Array arr = {{2,3,4,5,6}, 10, 5};
+    struct Array arr = {{2,-3,4,-5,6}, 10, 5};
 
     // Use this code to create an array in the heap memory
 
@@ -266,7 +277,8 @@ int main() {
     // leftrotate(&arr);
     // rightrotate(&arr);
     // insertSort(&arr, 8);
-    printf("%d ", isSorted(arr));
+    // printf("%d ", isSorted(arr));
+    Rearrange(&arr);
     Display(arr);
 
     return 0;
